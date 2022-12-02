@@ -19,7 +19,10 @@ export default function Home() {
       </section>
 
       {/* About */}
+      <section id="hero" className="snap-center">
+
       <About />
+      </section>
       {/* Experience */}
       {/* Skills */}
       {/* Projects */}
