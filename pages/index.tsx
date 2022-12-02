@@ -1,4 +1,5 @@
 import Head from "next/head";
+import About from "../components/About";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 
@@ -18,6 +19,7 @@ export default function Home() {
       </section>
 
       {/* About */}
+      <About />
       {/* Experience */}
       {/* Skills */}
       {/* Projects */}
