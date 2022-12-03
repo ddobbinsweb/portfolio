@@ -27,11 +27,11 @@ export default function Header({}: Props) {
           fgColor="gray"
           bgColor="transparent"
         />
-        {/* <SocialIcon
-          url="https://www.youtube.com/daviddobbins"
+        <SocialIcon
+          url="https://www.linkedin.com/in/david-dobbins/"
           fgColor="gray"
           bgColor="transparent"
-        /> */}
+        />
       </motion.div>
       <motion.div
          initial={{
