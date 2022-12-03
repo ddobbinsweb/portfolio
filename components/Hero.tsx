@@ -5,8 +5,8 @@ type Props = {};
 
 export default function Hero({}: Props) {
   const [text, helper] = useTypewriter({
-    words: ["Yo, I'm Dobbins nice of you to stop by"],
-    loop: false,
+    words: ["Hi, I'm David Dobbins"],
+    loop: 1,
     delaySpeed: 2000,
   });
   return (
@@ -25,7 +25,7 @@ export default function Hero({}: Props) {
 
         <h1 className="text-5xl lg:text-6xl font-semibold px-10">
           <span className="mr-3">{text}</span>
-          <Cursor cursorColor="#F7AB0A"></Cursor>
+          <Cursor cursorColor="#0ea5e9"></Cursor>
         </h1>
         <div className="pt-5">
           <Link href="#about">
