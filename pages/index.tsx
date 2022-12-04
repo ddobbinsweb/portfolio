@@ -36,13 +36,15 @@ export default function Home() {
         <Contact />
       </section>
 
-      <Link href="#hero">
+     
       <footer className="sticky bottom-5 w-full cursor-pointer">
+      <Link href="#hero">
         <div className="flex items-center justify-center">
           <ArrowUpCircleIcon width={50} title="back to top" aria-label="back to top"
       /></div>
-      </footer>
       </Link>
+      </footer>
+      
     </div>
   );
 }
