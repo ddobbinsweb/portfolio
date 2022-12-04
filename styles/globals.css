@@ -17,4 +17,11 @@
     text-gray-300 placeholder-gray-500 transition-all focus:border-[#0ea5e9]/40 
     hover:border-[#0ea5e9]/40
   }
+
+  .scrollBarAccent-normal{
+   @apply scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#0ea5e9]/80
+  }
+  .scrollBarAccent-thin{
+    @apply scrollbar scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#0ea5e9]/80
+   }
 }
