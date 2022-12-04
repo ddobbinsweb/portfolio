@@ -15,7 +15,7 @@ export default {
     },
     {
       name: "heroImage",
-      title: "Image",
+      title: "Hero Image",
       type: "image",
       options: {
         hotspot: true,
@@ -24,11 +24,11 @@ export default {
     {
       name: "bio",
       title: "Bio",
-      type: "string",
+      type: "text",
     },
     {
       name: "profilePic",
-      title: "ProfilePic",
+      title: "Profile Picture",
       type: "image",
       options: {
         hotspot: true,
@@ -50,19 +50,19 @@ export default {
       type: "array",
       of: [{type:"reference",to:{type:"social"}}],
     }
-  ]
+  ],
 
-  // preview: {
-  //   select: {
-  //     title: 'title',
-  //     author: 'author.name',
-  //     media: 'mainImage',
-  //   },
-  //   prepare(selection) {
-  //     const {author} = selection
-  //     return Object.assign({}, selection, {
-  //       subtitle: author && `by ${author}`,
-  //     })
-  //   },
-  // },
+  preview: {
+    select: {
+      title: 'name',
+      name: 'name',
+      media: 'profilePic',
+    },
+    // prepare(selection) {
+    //   const {name} = selection
+    //   return Object.assign({}, selection, {
+    //     subtitle: name && `by ${name}`,
+    //   })
+    // },
+  },
 };
