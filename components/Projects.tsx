@@ -17,7 +17,7 @@ function Projects({}: Props) {
       <h3 className="sectionHeader">Projects</h3>
 
       <div className="relative w-full flex overflow-x-scroll overflow-y-hidden
-       snap-x snap-mandatory z-20  scrollBarAccent-thin" >
+       snap-x snap-mandatory z-20  scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#0ea5e9]/80" >
         {projectList.map((project, i) => (
           <div
             key={i}
@@ -32,16 +32,17 @@ function Projects({}: Props) {
               transition={{ duration: 1.2 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{once:true}}
+              className="rounded-lg shadow-lg md:w-[550px] md:h-[450px]"
               src="https://images.pexels.com/photos/633409/pexels-photo-633409.jpeg?auto=compress&cs=tinysrgb&w=1600"
               alt="image"
             />
 
             <div className="space-y-10 px-0 md:px-10 max-w-6xl">
               <h4 className="text-4xl font-semibold text-center">
-                <span className="underline decoration-[0ea5e9]/50">
-                  Project {i + 1} of {projectList.length} :
-                </span>{" "}
+                <span className="underline decoration-[#0ea5e9]/50">
                 {project}
+                </span>
+               
               </h4>
               <p className="text-lg text-center md:text-left">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
@@ -49,14 +50,7 @@ function Projects({}: Props) {
                 Nam sollicitudin, orci sed eleifend efficitur, ante nisl
                 interdum nulla, id sodales urna ipsum sit amet libero.
                 Pellentesque a leo dolor. Fusce efficitur maximus est a aliquet.
-                Ut sed felis sit amet ex feugiat pharetra sit amet sed nibh.
-                Nunc sollicitudin commodo fermentum. Morbi fringilla, orci quis
-                blandit varius, diam eros vehicula purus, eget porttitor nunc
-                enim a velit. Donec quam nisl, eleifend eu dui vitae,
-                condimentum accumsan nulla. Etiam hendrerit lacinia justo, at
-                dignissim eros aliquet eget. Quisque commodo laoreet sapien eu
-                ultrices. Donec tristique turpis id dignissim molestie.
-                Curabitur et risus euismod mauris tincidunt venenatis.
+             
               </p>
             </div>
           </div>
