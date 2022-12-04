@@ -22,6 +22,6 @@
    @apply scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#0ea5e9]/80
   }
   .scrollBarAccent-thin{
-    @apply scrollbar scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#0ea5e9]/80
+    @apply scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#0ea5e9]/80
    }
 }
