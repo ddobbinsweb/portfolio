@@ -22,6 +22,12 @@ export default {
       },
     },
     {
+      name: "heroPhrases",
+      title: "Hero Phrases",
+      type: "array",
+      of:[{type:"string"}]
+    },
+    {
       name: "bio",
       title: "Bio",
       type: "text",
