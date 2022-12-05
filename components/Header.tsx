@@ -1,9 +1,13 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { SocialIcon } from "react-social-icons";
-type Props = {};
+import { Social } from "../typings";
 
-export default function Header({}: Props) {
+type Props = {
+  socials: Social[];
+};
+
+export default function Header({ socials }: Props) {
   return (
     <header className="sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center">
       <motion.div
@@ -22,18 +26,14 @@ export default function Header({}: Props) {
         }}
         className="flex flex-row items-center"
       >
-        {/* social icons */}
-
-        <SocialIcon
-          url="https://www.github.com/ddobbinsweb"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        <SocialIcon
-          url="https://www.linkedin.com/in/david-dobbins/"
-          fgColor="gray"
-          bgColor="transparent"
-        />
+        {socials &&
+          socials.map((social,i) => (
+            <SocialIcon key={social._id}
+              url={social.url}
+              fgColor="gray"
+              bgColor="transparent"
+            />
+          ))}
       </motion.div>
       <Link href="#contact">
         <motion.div
@@ -58,7 +58,7 @@ export default function Header({}: Props) {
             fgColor="gray"
             bgColor="transparent"
           />
-          <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
+          <p className="uppercase hidden md:inline-flex text-sm text-gray-400 mr-10">
             get in touch
           </p>
         </motion.div>
