@@ -20,6 +20,7 @@ export interface PageInfo extends SanityBody {
   email: string;
   address: string;
   heroImage: Image;
+  heroPhrases:string[];
   profilePic: Image;
 }
 export interface Skill extends SanityBody {
