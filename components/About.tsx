@@ -39,7 +39,7 @@ export default function About({ pageInfo }: Props) {
           background
         </h4>
       </div>
-      <p className="text-base">{pageInfo.bio}</p>
+      <p className="text-base">{pageInfo?.bio}</p>
     </motion.div>
   );
 }

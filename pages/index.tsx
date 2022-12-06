@@ -24,14 +24,14 @@ type Props = {
   socials: Social[];
 };
 //, experiences, skills, projects,
-const Home = ({ pageInfo,experiences,skills, socials }: Props) => {
+const Home = ({ pageInfo,experiences,skills,projects, socials }: Props) => {
   return (
     <div
       className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory 
     overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#0ea5e9]/80"
     >
       <Head>
-        <title>David{`'`}s Portfolio</title>
+        <title>David Dobbins Portfolio</title>
         <meta name="description" content="David Dobbins Portfolio" />
       </Head>
       <Header socials={socials} />
@@ -48,7 +48,7 @@ const Home = ({ pageInfo,experiences,skills, socials }: Props) => {
         <Skills skills={skills} />
       </section>
       <section id="projects" className="snap-center">
-        <Projects />
+        <Projects  projects={projects}/>
       </section>
       <section id="contact" className="snap-start">
         <Contact />

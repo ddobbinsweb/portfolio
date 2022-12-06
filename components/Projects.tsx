@@ -1,12 +1,16 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 // TODO: fix this
 // use github projects to insert here
 
 import { motion } from "framer-motion";
-type Props = {};
+import { urlFor } from "../sanity";
+import { Project } from "../typings";
+type Props = {
+  projects: Project[]
+};
 
-function Projects({}: Props) {
-  const projectList = [1, 2, 3, 4];
+function Projects({projects}: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -18,9 +22,9 @@ function Projects({}: Props) {
 
       <div className="relative w-full flex overflow-x-scroll overflow-y-hidden
        snap-x snap-mandatory z-20  scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#0ea5e9]/80" >
-        {projectList.map((project, i) => (
+        {projects?.map((project) => (
           <div
-            key={i}
+            key={project?._id}
             className="w-screen  flex-shrink-0 snap-center flex flex-col 
             space-y-5 items-center justify-center p-20 md:p-44"
           >
@@ -33,24 +37,27 @@ function Projects({}: Props) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{once:true}}
               className="rounded-lg shadow-lg md:w-[550px] md:h-[450px]"
-              src="https://images.pexels.com/photos/633409/pexels-photo-633409.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              alt="image"
+              src={urlFor(project?.image).url()}
+              alt={project?.title}
             />
 
             <div className="space-y-10 px-0 md:px-10 max-w-6xl">
               <h4 className="text-4xl font-semibold text-center">
                 <span className="underline decoration-[#0ea5e9]/50">
-                {project}
+                {project?.title}
                 </span>
                
               </h4>
+
+           <div className="flex items-center space-x-2 justify-center">  
+           {project?.skills.map(skill=>(
+                <img key={skill?._id} 
+                className="h-10 w-10" 
+                src={urlFor(skill?.image).url()} />
+              ))}
+           </div>
               <p className="text-lg text-center md:text-left">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                eros purus, hendrerit porttitor nibh eget, viverra egestas leo.
-                Nam sollicitudin, orci sed eleifend efficitur, ante nisl
-                interdum nulla, id sodales urna ipsum sit amet libero.
-                Pellentesque a leo dolor. Fusce efficitur maximus est a aliquet.
-             
+              {project?.summary}
               </p>
             </div>
           </div>
