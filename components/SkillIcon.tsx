@@ -7,7 +7,7 @@ type Props = {
 };
 
 export default function SkillIcon({ directionLeft, skill}: Props) {
-  console.log(skill);
+
   return (
     <div className="group relative flex cursor-pointer">
       <motion.img

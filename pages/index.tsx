@@ -31,7 +31,7 @@ const Home = ({ pageInfo,experiences,skills, socials }: Props) => {
     overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#0ea5e9]/80"
     >
       <Head>
-        <title>David`&apos;`s Portfolio</title>
+        <title>David{`'`}s Portfolio</title>
         <meta name="description" content="David Dobbins Portfolio" />
       </Head>
       <Header socials={socials} />
