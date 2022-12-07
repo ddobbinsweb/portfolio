@@ -8,7 +8,7 @@ type Props = {
   pageInfo: PageInfo;
 };
 
-export default function Hero({pageInfo}: Props) {
+export default function Hero({ pageInfo }: Props) {
   const [text, helper] = useTypewriter({
     words: pageInfo?.heroPhrases ?? ["Hi, I'm David Dobbins"],
     loop: true,
@@ -17,12 +17,12 @@ export default function Hero({pageInfo}: Props) {
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
       <BackgroundCircles />
-      {/* use nextjs images */}
+
       <img
-         className="relative rounded-full h-32 w-32 mx-auto object-cover"
+        className="relative rounded-full h-32 w-32 mx-auto object-cover"
         width={100}
         height={100}
-        src={urlFor(pageInfo?.heroImage).url() }
+        src={urlFor(pageInfo?.heroImage).url()}
         alt=""
       />
       <div className="z-20">

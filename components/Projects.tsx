@@ -38,7 +38,7 @@ function Projects({ projects }: Props) {
               transition={{ duration: 1.2 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="rounded-lg shadow-lg md:w-[550px] md:h-[450px]"
+              className="rounded-lg shadow-lg md:w-[350px] md:h-[350px]"
               src={urlFor(project?.image).url()}
               alt={project?.title}
             />
