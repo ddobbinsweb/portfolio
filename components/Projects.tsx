@@ -4,6 +4,7 @@
 // use github projects to insert here
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { urlFor } from "../sanity";
 import { Project } from "../typings";
 type Props = {
@@ -11,6 +12,7 @@ type Props = {
 };
 
 function Projects({ projects }: Props) {
+  console.log(projects);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -46,7 +48,10 @@ function Projects({ projects }: Props) {
             <div className="space-y-10 px-0 md:px-10 max-w-6xl">
               <h4 className="text-4xl font-semibold text-center">
                 <span className="underline decoration-[#0ea5e9]/50">
-                  {project?.title}
+                <Link href={project?.linkToBuild } title={project?.title}>
+                {project?.title}
+                 </Link>
+                 
                 </span>
               </h4>
 
