@@ -1,5 +1,6 @@
 import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/24/solid";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { PageInfo } from "../typings";
 
 type Inputs = {
   name: string;
@@ -8,9 +9,11 @@ type Inputs = {
   message: string;
 };
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo;
+};
 
-export default function Contact({}: Props) {
+export default function Contact({pageInfo}: Props) {
   const {
     register,
     handleSubmit,
@@ -18,7 +21,7 @@ export default function Contact({}: Props) {
   } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = (formData) => {
-    window.location.href=`mailto:me@ddobbins.io?subject=${formData.subject}&body=${formData.message}`;
+    window.location.href=`mailto:${pageInfo?.email}?subject=${formData.subject}&body=${formData.message}`;
    reset();
   };
   
@@ -31,26 +34,26 @@ export default function Contact({}: Props) {
 
       <div className="flex flex-col space-y-10">
         <h4 className="text-4xl font-semibold text-center">
-          Suh <span className="decoration-[#0ea5e9]/50 underline"> Dude! </span>
+          Get In <span className="decoration-[#0ea5e9]/50 underline"> Touch! </span>
         </h4>
 
         <div className="space-y-10">
           <div className="flex items-center space-x-5 justify-center">
             <EnvelopeIcon
               className="text-[#0ea5e9] h-7 w-7"
-              title="Call Me"
+              title="Email"
               width={"50px"}
             />
-            <p className="text-2xl">me@ddobins.io</p>
+            <p className="text-2xl">{pageInfo?.email}</p>
           </div>
 
           <div className="flex items-center space-x-5 justify-center">
             <MapPinIcon
               className="text-[#0ea5e9] h-7 w-7"
-              title="Call Me"
+              title="location"
               width={"50px"}
             />
-            <p className="text-2xl">Raleigh, NC</p>
+            <p className="text-2xl">{pageInfo?.address}</p>
           </div>
         </div>
         <form 

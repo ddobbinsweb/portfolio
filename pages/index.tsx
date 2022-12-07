@@ -51,7 +51,7 @@ const Home = ({ pageInfo,experiences,skills,projects, socials }: Props) => {
         <Projects  projects={projects}/>
       </section>
       <section id="contact" className="snap-start">
-        <Contact />
+        <Contact pageInfo={pageInfo} />
       </section>
       <footer className="sticky bottom-5 w-full cursor-pointer">
         <Link href="#hero">
@@ -70,7 +70,7 @@ const Home = ({ pageInfo,experiences,skills,projects, socials }: Props) => {
 
 export default Home;
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getStaticProps: GetStaticProps<Props> = async (context) => {
   const pageInfo: PageInfo = await fetchPageInfo();
   const experiences: Experience[] = await fetchExperiences();
   const skills: Skill[] = await fetchSkills();
@@ -85,6 +85,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       projects,
       socials,
     },
-    revalidate: 10,
+    revalidate: 60,
   };
 };
