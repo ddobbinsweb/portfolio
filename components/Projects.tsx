@@ -7,10 +7,10 @@ import { motion } from "framer-motion";
 import { urlFor } from "../sanity";
 import { Project } from "../typings";
 type Props = {
-  projects: Project[]
+  projects: Project[];
 };
 
-function Projects({projects}: Props) {
+function Projects({ projects }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -20,8 +20,10 @@ function Projects({projects}: Props) {
     >
       <h3 className="sectionHeader">Projects</h3>
 
-      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden
-       snap-x snap-mandatory z-20  scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#0ea5e9]/80" >
+      <div
+        className="relative w-full flex overflow-x-scroll overflow-y-hidden
+       snap-x snap-mandatory z-20  scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#0ea5e9]/80"
+      >
         {projects?.map((project) => (
           <div
             key={project?._id}
@@ -35,7 +37,7 @@ function Projects({projects}: Props) {
               }}
               transition={{ duration: 1.2 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{once:true}}
+              viewport={{ once: true }}
               className="rounded-lg shadow-lg md:w-[550px] md:h-[450px]"
               src={urlFor(project?.image).url()}
               alt={project?.title}
@@ -44,20 +46,21 @@ function Projects({projects}: Props) {
             <div className="space-y-10 px-0 md:px-10 max-w-6xl">
               <h4 className="text-4xl font-semibold text-center">
                 <span className="underline decoration-[#0ea5e9]/50">
-                {project?.title}
+                  {project?.title}
                 </span>
-               
               </h4>
 
-           <div className="flex items-center space-x-2 justify-center">  
-           {project?.skills.map(skill=>(
-                <img key={skill?._id} 
-                className="h-10 w-10" 
-                src={urlFor(skill?.image).url()} />
-              ))}
-           </div>
+              <div className="flex items-center space-x-2 justify-center">
+                {project?.skills.map((skill) => (
+                  <img
+                    key={skill?._id}
+                    className="h-10 w-10"
+                    src={urlFor(skill?.image).url()}
+                  />
+                ))}
+              </div>
               <p className="text-lg text-center md:text-left">
-              {project?.summary}
+                {project?.summary}
               </p>
             </div>
           </div>
