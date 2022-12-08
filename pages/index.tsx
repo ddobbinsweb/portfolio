@@ -71,6 +71,7 @@ export const getServerSideProps: GetServerSideProps = async ({
 }) => {
   try {
     const pageInfo: PageInfo = await fetchPageInfo();
+    console.log("data:",pageInfo);
     return {
       props: {
         pageInfo,
