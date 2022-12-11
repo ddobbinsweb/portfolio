@@ -26,8 +26,7 @@ export interface PageInfo extends SanityBody {
 export interface Skill extends SanityBody {
   _type: "skill";
   title: string;
-  image: Image;
-  progress: number;
+  image: string;
 }
 export interface Experience extends SanityBody {
   _type: "experience";
@@ -53,4 +52,11 @@ export interface Social extends SanityBody {
   _type: "social";
   title: string;
   url: string;
+}
+export interface Certification extends SanityBody {
+  _type: "certification";
+  title: string;
+  url: string;
+  image:Image;
+  expires: Date;
 }

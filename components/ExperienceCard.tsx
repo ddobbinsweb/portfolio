@@ -35,7 +35,7 @@ export default function ExperienceCard({ experience }: Props) {
             <img
               key={skill?._id}
               className="h-10 w-10 rounded-full"
-              src={urlFor(skill?.image).url()}
+              src={skill?.image}
               alt={skill?.title}
             />
           ))}

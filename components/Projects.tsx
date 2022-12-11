@@ -60,7 +60,7 @@ function Projects({ projects }: Props) {
                   <img
                     key={skill?._id}
                     className="h-10 w-10"
-                    src={urlFor(skill?.image).url()}
+                    src={skill?.image}
                   />
                 ))}
               </div>
