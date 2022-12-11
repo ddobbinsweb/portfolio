@@ -10,32 +10,11 @@ export default {
     },
     {
       name: "image",
-      title: "Image",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
-    },
-    {
-      name: "progress",
-      title: "Progress",
-      type: "number",
-      description:"Progress of skill from 0 - 100%",
-      validation: (Rule) => Rule.min(0).max(100),
-    },
+      title: "url of Skill",
+      type: "string",
+      initialValue: "https://skillicons.dev/icons?i=" //https://skillicons.dev/
+    }
   ],
 
-  // preview: {
-  //   select: {
-  //     title: 'title',
-  //     author: 'author.name',
-  //     media: 'mainImage',
-  //   },
-  //   prepare(selection) {
-  //     const {author} = selection
-  //     return Object.assign({}, selection, {
-  //       subtitle: author && `by ${author}`,
-  //     })
-  //   },
-  // },
+
 };
