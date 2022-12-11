@@ -3,13 +3,15 @@ import { GetServerSideProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import About from "../components/About";
+import Certifications from "../components/Certifications";
 import Contact from "../components/Contact";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import WorkExperience from "../components/WorkExperience";
-import { Experience, PageInfo, Project, Skill, Social } from "../typings";
+import { Certification, Experience, PageInfo, Project, Skill, Social } from "../typings";
+import { fetchCertifications } from "../utils/fetchCertifications";
 import { fetchExperiences } from "../utils/fetchExperiences";
 import { fetchPageInfo } from "../utils/fetchPageInfo";
 import { fetchProjects } from "../utils/fetchProjects";
@@ -22,9 +24,10 @@ type Props = {
   skills: Skill[];
   projects: Project[];
   socials: Social[];
+  certifications: Certification[];
 };
 //, experiences, skills, projects,
-const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
+const Home = ({ pageInfo, experiences, skills, projects, socials,certifications }: Props) => {
   if (!pageInfo?.name) return null;
 
   const title = `${pageInfo?.name} Portfolio`;
@@ -47,6 +50,9 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
       <section id="experience" className="snap-center">
         <WorkExperience experiences={experiences} />
       </section>
+      <section id="certifications" className="snap-start">
+        <Certifications certifications={certifications} />
+      </section>
       <section id="skills" className="snap-start">
         <Skills skills={skills} />
       </section>
@@ -57,7 +63,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
         <Contact pageInfo={pageInfo} />
       </section>
       <footer className="sticky bottom-5 w-full cursor-pointer">
-        <Link href="#hero">
+        <Link href="/">
           <div className="flex items-center justify-center ">
             <ArrowUpCircleIcon
               width={50}
@@ -83,6 +89,7 @@ export const getServerSideProps: GetServerSideProps = async ({
     const skills: Skill[] = await fetchSkills();
     const projects: Project[] = await fetchProjects();
     const socials: Social[] = await fetchSocials();
+    const certifications : Certification[] = await fetchCertifications();
     return {
       props: {
         pageInfo,
@@ -90,6 +97,7 @@ export const getServerSideProps: GetServerSideProps = async ({
         skills,
         projects,
         socials,
+        certifications,
       },
     };
   } catch {
