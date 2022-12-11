@@ -5,6 +5,7 @@ import createSchema from "part:@sanity/base/schema-creator";
 import schemaTypes from "all:part:@sanity/base/schema-type";
 
 // We import object and document schemas
+import certification from "./certification";
 import experience from "./experience";
 import pageInfo from "./pageInfo";
 import project from "./project";
@@ -16,5 +17,5 @@ import social from "./social";
 export default createSchema({
   // We name our schema
   name: "default",
-  types: schemaTypes.concat([pageInfo, experience, project, skill, social]),
+  types: schemaTypes.concat([pageInfo, experience, project, skill, social, certification]),
 });
