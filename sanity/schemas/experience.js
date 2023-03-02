@@ -25,11 +25,19 @@ export default {
       name: "dateStarted",
       title: "Date Started",
       type: "date",
+      options: {
+        dateFormat: 'YYYY-MM',
+        calendarTodayLabel: 'Today'
+      }
     },
     {
       name: "dateEnded",
       title: "Date Ended",
       type: "date",
+      options: {
+        dateFormat: 'YYYY-MM',
+        calendarTodayLabel: 'Today'
+      }
     },
     {
       name: "isCurrentlyWorkingHere",
