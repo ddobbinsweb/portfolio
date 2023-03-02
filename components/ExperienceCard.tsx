@@ -6,7 +6,6 @@ type Props = {
 };
 
 export default function ExperienceCard({ experience }: Props) {
-  const options = {  year: 'numeric', month: 'short'};
   return (
     <article
       className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 h-[500px]
@@ -27,10 +26,10 @@ export default function ExperienceCard({ experience }: Props) {
           ))}
         </div>
         <p className="uppercase py-5 text-gray-300">
-          {new Date(experience?.dateStarted).toLocaleDateString(undefined, options)} -{" "}
+          {new Date(experience?.dateStarted).toLocaleDateString('en-US', {  year: 'numeric', month: 'short'})} -{" "}
           {experience?.isCurrentlyWorkingHere
             ? "Present"
-            : new Date(experience?.dateEnded).toLocaleDateString(undefined, options)}
+            : new Date(experience?.dateEnded).toLocaleDateString('en-US', {  year: 'numeric', month: 'short'})}
         </p>
         {/* TODO: make scrollable */}
         <ul className="list-disc space-y-4 ml-5 text-lg">
