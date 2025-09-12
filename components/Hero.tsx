@@ -4,11 +4,13 @@ import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { urlFor } from "../sanity";
 import { PageInfo } from "../typings";
 import BackgroundCircles from "./BackgroundCircles";
+
 type Props = {
   pageInfo: PageInfo;
+  includeProjects: boolean;
 };
 
-export default function Hero({ pageInfo }: Props) {
+export default function Hero({ pageInfo, includeProjects }: Props) {
   const [text, helper] = useTypewriter({
     words: pageInfo?.heroPhrases ?? ["Hi, I'm David Dobbins"],
     loop: true,
@@ -42,16 +44,14 @@ export default function Hero({ pageInfo }: Props) {
           <Link href="#experience">
             <button className="heroButton">Experience</button>
           </Link>
-          {/* <Link href="#certifications">
-            <button className="heroButton">Certifications</button>
-          </Link> */}
           <Link href="#skills">
             <button className="heroButton">Skills</button>
           </Link>
-
-          <Link href="#projects">
-            <button className="heroButton">Projects</button>
-          </Link>
+          {includeProjects && (
+            <Link href="#projects">
+              <button className="heroButton">Projects</button>
+            </Link>
+          )}
 
           <Link href="#contact">
             <button className="heroButton">Contact</button>

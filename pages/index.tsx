@@ -28,6 +28,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
   if (!pageInfo?.name) return null;
 
   const title = `${pageInfo?.name} Portfolio`;
+  const showProjects = projects && projects.length > 0;
   return (
     <div
       className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory 
@@ -35,11 +36,14 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
     >
       <Head>
         <title>{title}</title>
-        <meta name="description" content="David Dobbins Portfolio" />
+        <meta
+          name="David Dobbins Senior Software Engineer"
+          content="David Dobbins Portfolio"
+        />
       </Head>
       <Header socials={socials} />
       <section id="hero" className="snap-start">
-        <Hero pageInfo={pageInfo} />
+        <Hero pageInfo={pageInfo} includeProjects={showProjects} />
       </section>
       <section id="about" className="snap-center">
         <About pageInfo={pageInfo} />
@@ -50,9 +54,12 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
       <section id="skills" className="snap-start">
         <Skills skills={skills} />
       </section>
-      <section id="projects" className="snap-center">
-        <Projects projects={projects} />
-      </section>
+      {showProjects && (
+        <section id="projects" className="snap-center">
+          <Projects projects={projects} />
+        </section>
+      )}
+
       <section id="contact" className="snap-start">
         <Contact pageInfo={pageInfo} />
       </section>
